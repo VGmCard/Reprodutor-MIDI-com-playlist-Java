@@ -1,4 +1,3 @@
-import java.util.Objects;
 import java.util.Scanner;
 
 public class Main {
@@ -81,9 +80,12 @@ public class Main {
                     listavip.exibir();
                     break;
                 case 6:
-                    for (int i = 0; i < listavip.size(); i++) {
-                        if (Objects.equals(playlist.titulo(i), listavip.titulo(i))){
+                    for (int i = 0; i < playlist.size(); i++) {
+                        if (playlist.peek().getTitulo().replaceAll(" ", "").equalsIgnoreCase(listavip.titulo(i).replaceAll(" ", ""))){
                             ReproduzirMIDI.jukebox(playlist.peek().getTitulo());
+                            //Se remover o break, irá tocar consecultivamente
+                            break;
+                            //Sem um "playlist.pop()", irá tocar a mesma música "playlist.size()" vezes
                         }
                     }
                     playlist.pop();
