@@ -13,7 +13,7 @@ public class MidiUtil {
 
             return Math.toIntExact(segundos);
         } catch (Exception e) {
-            System.out.print("Erro ao carregar arquivo MIDI");
+//            System.out.println("Erro ao carregar arquivo MIDI");
         }
         return 0;
     }

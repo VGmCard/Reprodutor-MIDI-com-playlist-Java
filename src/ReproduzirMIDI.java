@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class ReproduzirMIDI {
     public static void jukebox(String nome) throws Exception {
-        nome = nome.trim().toLowerCase()+".mid";
+        nome = nome.replaceAll(" ", "").toLowerCase()+".mid";
         // Carregue o arquivo MIDI
         File arquivoMIDI = new File(nome);
 
@@ -39,7 +39,6 @@ public class ReproduzirMIDI {
                 sequenciador.stop();
                 break;
             }
-
         }
 
         // Feche o sequenciador

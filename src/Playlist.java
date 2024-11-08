@@ -1,5 +1,6 @@
 import java.util.LinkedList;
 import java.util.ListIterator;
+import java.util.NoSuchElementException;
 
 public class Playlist {
 
@@ -36,6 +37,46 @@ public class Playlist {
         return lista.size();
     }
 
+    public Musica next(){
+        try {
+            return listIterator.next();
+        } catch (NoSuchElementException e){
+            System.out.println("Adicione mais músicas na fila!");
+            return null;
+        }
+    }
+
+    public Musica previous(){
+        try {
+            return listIterator.previous();
+        } catch (NoSuchElementException e){
+            System.out.println("Não é possível retroceder mais!");
+            return null;
+        }
+    }
+
+    public Musica nextView(){
+        try {
+            Musica musica = listIterator.next();
+            listIterator.previous();
+            return musica;
+        } catch (NoSuchElementException e){
+            System.out.println("Adicione mais músicas na fila!");
+            return null;
+        }
+    }
+
+    public Musica previousView(){
+        try {
+            Musica musica = listIterator.previous();
+            listIterator.next();
+            return musica;
+        } catch (NoSuchElementException e){
+            System.out.println("Não é possível retroceder mais!");
+            return null;
+        }
+    }
+
     public void exibir(){
         for (int i = 0; i < lista.size(); i++) {
             System.out.println(titulo(i));
@@ -55,4 +96,7 @@ public class Playlist {
         return lista.get(indice).getDuracao();
     }
 
+    protected void clear() {
+        lista.clear();
+    }
 }
