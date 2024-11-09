@@ -5,7 +5,7 @@ import java.io.File;
 public class MidiUtil {
 
     public static int getDuracaoReproducao(String arquivoMIDI) {
-        arquivoMIDI = arquivoMIDI.trim().toLowerCase()+".mid";
+        arquivoMIDI = arquivoMIDI.replaceAll(" ", "").toLowerCase()+".mid";
         try {
             Sequence sequencia = MidiSystem.getSequence(new File(arquivoMIDI));
             long microsegundos = sequencia.getMicrosecondLength();
@@ -13,8 +13,8 @@ public class MidiUtil {
 
             return Math.toIntExact(segundos);
         } catch (Exception e) {
-//            System.out.println("Erro ao carregar arquivo MIDI");
+            System.out.println("Erro ao carregar arquivo MIDI: "+arquivoMIDI);
         }
-        return 0;
+        return -1;
     }
 }

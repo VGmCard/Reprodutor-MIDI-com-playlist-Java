@@ -31,7 +31,6 @@ public class ReproduzirMIDI {
         System.out.println("Pressione 'p' para parar a reprodução.");
         System.out.println("Duração da faixa: " + formatarTempo(sequencia.getMicrosecondLength()) + " segundos.");
 
-
         while (sequenciador.isRunning()) {
             String input = scanner.nextLine();
 

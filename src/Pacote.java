@@ -14,7 +14,7 @@ public class Pacote {
         pacote.adicionar("Crazy Train", "Ozzy Osbourne", MidiUtil.getDuracaoReproducao("Crazy Train"));
         pacote.adicionar("Dark World", "Koji Kondo", MidiUtil.getDuracaoReproducao("Dark World"));
         pacote.adicionar("Easily", "Red Hot Chili Peppers", MidiUtil.getDuracaoReproducao("Easily"));
-        pacote.adicionar("Everything She Wants", "Wham!", MidiUtil.getDuracaoReproducao("Everything She"));
+        pacote.adicionar("Everything She Wants", "Wham!", MidiUtil.getDuracaoReproducao("Everything She Wants"));
         pacote.adicionar("Green Hill", "Masato Nakamura", MidiUtil.getDuracaoReproducao("Green Hill"));
         pacote.adicionar("Green Hill Remix", "Desconhecido", MidiUtil.getDuracaoReproducao("Green Hill Remix"));
         pacote.adicionar("Higher Ground", "Red Hot Chili Peppers", MidiUtil.getDuracaoReproducao("Higher Ground"));
@@ -22,9 +22,9 @@ public class Pacote {
         pacote.adicionar("Hungry Like the Wolf", "Duran Duran", MidiUtil.getDuracaoReproducao("Hungry Like the Wolf"));
         pacote.adicionar("Immigrant Song", "Led Zeppelin", MidiUtil.getDuracaoReproducao("Immigrant Song"));
         pacote.adicionar("Kakariko Village", "Koji Kondo", MidiUtil.getDuracaoReproducao("Kakariko Village"));
-        pacote.adicionar("Living On a Prayer", "Bon Jovi", MidiUtil.getDuracaoReproducao("Living On a Prayer"));
+        pacote.adicionar("Livin on a Prayer", "Bon Jovi", MidiUtil.getDuracaoReproducao("Livin on a Prayer"));
         pacote.adicionar("Megalovania", "Toby Fox", MidiUtil.getDuracaoReproducao("Megalovania"));
-        pacote.adicionar("Never Gonna Give You Up", "Rick Astley", MidiUtil.getDuracaoReproducao("Never Gonna"));
+        pacote.adicionar("Never Gonna Give You Up", "Rick Astley", MidiUtil.getDuracaoReproducao("Never Gonna Give You Up"));
         pacote.adicionar("Sans", "Toby Fox", MidiUtil.getDuracaoReproducao("Sans"));
         pacote.adicionar("Save a Prayer", "Duran Duran", MidiUtil.getDuracaoReproducao("Save a Prayer"));
         pacote.adicionar("September", "Earth, Wind & Fire", MidiUtil.getDuracaoReproducao("September"));

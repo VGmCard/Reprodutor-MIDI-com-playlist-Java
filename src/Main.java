@@ -9,7 +9,7 @@ public class Main {
         Pacote listavip = new Pacote();
         listavip.pack();
 
-        int duracao, opcao = 0;
+        int duracao, opcao;
         String titulo, artista;
 
         do {
@@ -52,7 +52,7 @@ public class Main {
                     System.out.println("Qual música deseja remover?");
                     titulo = sc.nextLine();
                     for (int i = 0; i < playlist.size(); i++) {
-                        if (titulo == playlist.titulo(i)){
+                        if (titulo.equals(playlist.titulo(i))){
                             playlist.remover(i);
                             System.out.println("Música removida com sucesso!");
                         }
@@ -80,6 +80,12 @@ public class Main {
                     listavip.exibir();
                     break;
                 case 6:
+                    //Reproduz o arquivo MIDI
+                    System.out.println("Reproduzindo: "+playlist.peek().getTitulo());
+                    System.out.println("De: "+playlist.peek().getArtista());
+//                    try {
+//                        ReproduzirMIDI.jukebox(playlist.peek().getTitulo());
+//                    }
                     for (int i = 0; i < playlist.size(); i++) {
                         if (playlist.peek().getTitulo().replaceAll(" ", "").equalsIgnoreCase(listavip.titulo(i).replaceAll(" ", ""))){
                             ReproduzirMIDI.jukebox(playlist.peek().getTitulo());
@@ -95,7 +101,7 @@ public class Main {
                     titulo = sc.next();
                     sc.nextLine();
                     for (int i = 0; i < playlist.size(); i++) {
-                        if (titulo == playlist.titulo(i)){
+                        if (titulo.equalsIgnoreCase(playlist.titulo(i))){
                             System.out.println(titulo);
                             System.out.println(playlist.artista(i));
                             System.out.println(playlist.duracao(i));
@@ -109,6 +115,26 @@ public class Main {
                                 listavip.artista(i),
                                 listavip.duracao(i));
                     }
+                    break;
+                case 9:
+                    playlist.nextView();
+                    break;
+                case 10:
+                    playlist.previousView();
+                    break;
+                case 11:
+                    System.out.println("Avançando...");
+                    playlist.next();
+                    break;
+                case 12:
+                    System.out.println("Retornando...");
+                    playlist.previous();
+                    break;
+                case 0:
+                    System.out.println("Saindo...");
+                    break;
+                default:
+                    System.out.println();
                     break;
             }
         } while(opcao != 0);

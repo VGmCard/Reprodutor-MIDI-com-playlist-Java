@@ -37,43 +37,43 @@ public class Playlist {
         return lista.size();
     }
 
-    public Musica next(){
+    public void next(){
         try {
-            return listIterator.next();
+            listIterator.next();
         } catch (NoSuchElementException e){
             System.out.println("Adicione mais músicas na fila!");
-            return null;
         }
     }
 
-    public Musica previous(){
+    public void previous(){
         try {
-            return listIterator.previous();
+            listIterator.previous();
         } catch (NoSuchElementException e){
             System.out.println("Não é possível retroceder mais!");
-            return null;
         }
     }
 
-    public Musica nextView(){
+    public void nextView(){
         try {
             Musica musica = listIterator.next();
+            System.out.println("Nome: "+musica.getTitulo());
+            System.out.println("Artista: "+musica.getArtista());
+            System.out.println("Duração: "+musica.getDuracao());
             listIterator.previous();
-            return musica;
         } catch (NoSuchElementException e){
             System.out.println("Adicione mais músicas na fila!");
-            return null;
         }
     }
 
-    public Musica previousView(){
+    public void previousView(){
         try {
             Musica musica = listIterator.previous();
+            System.out.println("Nome: "+musica.getTitulo());
+            System.out.println("Artista: "+musica.getArtista());
+            System.out.println("Duração: "+musica.getDuracao());
             listIterator.next();
-            return musica;
         } catch (NoSuchElementException e){
             System.out.println("Não é possível retroceder mais!");
-            return null;
         }
     }
 
@@ -81,7 +81,7 @@ public class Playlist {
         for (int i = 0; i < lista.size(); i++) {
             System.out.println(titulo(i));
             System.out.println(artista(i));
-            System.out.println(duracao(i));
+            System.out.println(duracao(i)+" segundos");
             System.out.println("--/--/--/--/--");
         }
     }
